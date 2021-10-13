@@ -3,11 +3,9 @@
 // $3 = location
 // $4 = web
 
-param location string
-
-resource appInsightsComponents 'Microsoft.Insights/components@2020-02-02-preview' = {
+resource appInsightsComponents 'Microsoft.Insights/components@2020-02-02' = {
   name: 'name'
-  location: location
+  location: resourceGroup().location
   kind: 'web'
   properties: {
     Application_Type: 'web'

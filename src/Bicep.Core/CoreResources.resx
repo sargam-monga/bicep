@@ -286,4 +286,10 @@
   <data name="MaxNumberResourcesRuleMessageFormat" xml:space="preserve">
     <value>Too many resources. Number of resources is limited to {0}.</value>
   </data>
+  <data name="UseRecentApiVersionRuleDescription" xml:space="preserve">
+    <value>Use recent api version.</value>
+  </data>
+  <data name="UseRecentApiVersionRuleMessageFormat" xml:space="preserve">
+    <value>Use recent api version {0}</value>
+  </data>
 </root>

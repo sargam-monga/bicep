@@ -4,17 +4,14 @@
 // $4 = appServicePlan
 // $5 = 'webServerFarms.id'
 
-param location string
-
-resource webApplication 'Microsoft.Web/sites@2018-11-01' = {
+resource webApplication 'Microsoft.Web/sites@2021-01-15' = {
   name: 'name'
-  location: location
+  location: resourceGroup().location
   tags: {
     'hidden-related:${resourceGroup().id}/providers/Microsoft.Web/serverfarms/appServicePlan': 'Resource'
   }
   properties: {
     serverFarmId: 'webServerFarms.id'
   }
-}
-// Insert snippet here
+}// Insert snippet here
 

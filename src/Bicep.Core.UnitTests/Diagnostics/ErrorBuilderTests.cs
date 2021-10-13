@@ -187,6 +187,7 @@ namespace Bicep.Core.UnitTests.Diagnostics
             actualText.Should().Be(expectedText);
         }
 
+//asdfg?
         [DataRow(@"
                  resource vnet 'Microsoft.Network/virtualNetworks@2018-10-01' = {
                  }",
@@ -205,8 +206,9 @@ namespace Bicep.Core.UnitTests.Diagnostics
                  }"
         )]
         // There is leading whitespace in this one
+        //asdfg?
         [DataRow(@"
-                resource vnet 'Microsoft.Network/virtualNetworks@2018-10-01' = {
+                resource vnet 'Microsoft.Network/virtualNetworks@2019-11-01' = {
                   
                 }",
            @"

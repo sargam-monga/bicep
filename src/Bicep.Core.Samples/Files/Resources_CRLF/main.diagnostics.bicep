@@ -17,6 +17,7 @@ resource dnsZone 'Microsoft.Network/dnszones@2018-05-01' = {
 }
 
 resource myStorageAccount 'Microsoft.Storage/storageAccounts@2017-10-01' = {
+//@[61:71) [use-recent-api-version (Warning)] Use recent api version. (CodeDescription: bicep core(https://aka.ms/bicep/linter/use-recent-api-version)) |2017-10-01|
   name: 'myencryptedone'
   location: 'eastus2'
 //@[12:21) [no-hardcoded-location (Warning)] A resource location should not use a hard-coded string or variable value. Please use a parameter value, an expression, or the string 'global'. Found: 'eastus2' (CodeDescription: bicep core(https://aka.ms/bicep/linter/no-hardcoded-location)) |'eastus2'|
@@ -42,6 +43,7 @@ resource myStorageAccount 'Microsoft.Storage/storageAccounts@2017-10-01' = {
 }
 
 resource withExpressions 'Microsoft.Storage/storageAccounts@2017-10-01' = {
+//@[60:70) [use-recent-api-version (Warning)] Use recent api version. (CodeDescription: bicep core(https://aka.ms/bicep/linter/use-recent-api-version)) |2017-10-01|
   name: 'myencryptedone2'
   location: 'eastus2'
 //@[12:21) [no-hardcoded-location (Warning)] A resource location should not use a hard-coded string or variable value. Please use a parameter value, an expression, or the string 'global'. Found: 'eastus2' (CodeDescription: bicep core(https://aka.ms/bicep/linter/no-hardcoded-location)) |'eastus2'|

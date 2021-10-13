@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using Bicep.Core.Analyzers.Linter;
+using Bicep.Core.ApiVersion;
 using Bicep.Core.Configuration;
 using Bicep.Core.Emit;
 using Bicep.Core.Extensions;
@@ -56,6 +57,7 @@ namespace Bicep.Core.UnitTests
         public static readonly RootConfiguration BuiltInConfigurationWithAnalyzersDisabled = ConfigurationManager.GetBuiltInConfiguration(disableAnalyzers: true);
 
         public static readonly IModuleRestoreScheduler ModuleRestoreScheduler = CreateMockModuleRestoreScheduler();
+        public static readonly IApiVersionProvider ApiVersionProvider = new ApiVersionProvider();
 
         public static IFeatureProvider CreateFeaturesProvider(
             TestContext testContext,

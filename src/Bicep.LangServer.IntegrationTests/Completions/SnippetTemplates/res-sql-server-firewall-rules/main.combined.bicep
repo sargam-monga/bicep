@@ -7,18 +7,16 @@
 // $7 = 'startIpAddress'
 // $8 = 'endIpAddress'
 
-param location string
-
-resource sqlServer 'Microsoft.Sql/servers@2020-11-01-preview' = {
+resource sqlServer 'Microsoft.Sql/servers@2021-02-01-preview' = {
   name: 'name'
-  location: location
+  location: resourceGroup().location
   properties: {
     administratorLogin: 'administratorLogin'
     administratorLoginPassword: 'administratorLoginPassword'
   }
 }
 
-resource sqlServerFirewallRules 'Microsoft.Sql/servers/firewallRules@2020-11-01-preview' = {
+resource sqlServerFirewallRules 'Microsoft.Sql/servers/firewallRules@2021-02-01-preview' = {
   parent: sqlServer
   name: 'name'
   properties: {
