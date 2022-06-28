@@ -15,7 +15,7 @@ using Bicep.Core.Syntax;
 
 namespace Bicep.Core.Analyzers.Linter.Rules
 {
-    // Adds linter rule to flag an issue when api version used in resource is not the latest
+    // Adds linter rule to flag an issue when api version used in resource is not recent
     // 1. Any GA version is allowed as long as it's not > 2 years old, even if there is a more recent GA version
     // 2. If there is no GA apiVersion less than 2 years old, then take the latest one available from the cache of GA versions
     // 3. A preview version(api version with -preview prefix) is valid only if it is latest and there is no later GA version
@@ -116,7 +116,7 @@ namespace Bicep.Core.Analyzers.Linter.Rules
 
                 DateTime currentApiVersionDate = DateTime.Parse(currentApiVersion);
 
-                if (DateTime.Now.Year - currentApiVersionDate.Year <= 2)
+                if (DateTime.Now.Year - currentApiVersionDate.Year <= 2) //asdfg
                 {
                     return;
                 }
