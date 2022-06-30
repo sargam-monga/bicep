@@ -45,6 +45,7 @@ namespace Bicep.LanguageServer.Handlers
             new ParameterCodeFixProvider("maxLength", new []{"string", "array"}, Array.Empty<SyntaxBase>()),
             new ParameterCodeFixProvider("minValue", new []{"int"}, Array.Empty<SyntaxBase>()),
             new ParameterCodeFixProvider("maxValue", new []{"int"}, Array.Empty<SyntaxBase>()),
+            new ParameterCodeFixProvider("scopeBind", new []{"string"}, Array.Empty<SyntaxBase>()),
             new MultilineObjectsAndArraysCodeFixProvider(),
         }.ToImmutableArray<ICodeFixProvider>();
 

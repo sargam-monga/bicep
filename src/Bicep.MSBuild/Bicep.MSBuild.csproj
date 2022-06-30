@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <!-- do not upgrade these packages - we need to support msbuild 16 -->
+    <PackageReference Include="Azure.Bicep.Types.Ev2" Version="1.0.2" />
     <PackageReference Include="Microsoft.Build.Framework" Version="16.10.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.10.0" PrivateAssets="All" />
   </ItemGroup>

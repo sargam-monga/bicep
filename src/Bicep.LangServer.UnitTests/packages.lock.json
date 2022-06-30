@@ -2,6 +2,15 @@
   "version": 1,
   "dependencies": {
     "net6.0": {
+      "Azure.Bicep.Types.Ev2": {
+        "type": "Direct",
+        "requested": "[1.0.2, )",
+        "resolved": "1.0.2",
+        "contentHash": "nut6dAMfGrkuY2bNR9qvy+zN0j9J+OrHWdP38dO2eOwNtqmwZWw9KM2SNohxuN7bFrHZdusYQyDHZmXcbzJ3ww==",
+        "dependencies": {
+          "Azure.Bicep.Types": "0.1.304"
+        }
+      },
       "coverlet.collector": {
         "type": "Direct",
         "requested": "[3.1.2, )",
@@ -2016,6 +2025,7 @@
         "dependencies": {
           "Azure.Bicep.Types": "0.2.2",
           "Azure.Bicep.Types.Az": "0.2.2",
+          "Azure.Bicep.Types.Ev2": "1.0.2",
           "Azure.Bicep.Types.K8s": "0.1.11",
           "Azure.Containers.ContainerRegistry": "1.1.0-beta.4",
           "Azure.Deployments.Core": "1.0.635",
@@ -2037,6 +2047,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Bicep.Core": "1.0.0",
+          "Azure.Bicep.Types.Ev2": "1.0.2",
           "Newtonsoft.Json": "13.0.1",
           "System.Collections.Immutable": "6.0.0"
         }
@@ -2046,6 +2057,7 @@
         "dependencies": {
           "Azure.Bicep.Core": "1.0.0",
           "Azure.Bicep.Decompiler": "1.0.0",
+          "Azure.Bicep.Types.Ev2": "1.0.2",
           "Microsoft.Extensions.Logging": "6.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1"
         }
@@ -2054,6 +2066,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Bicep.Core": "1.0.0",
+          "Azure.Bicep.Types.Ev2": "1.0.2",
           "Bicep.Core.UnitTests": "1.0.0",
           "FluentAssertions": "6.7.0",
           "MSTest.TestAdapter": "2.2.10",
@@ -2066,6 +2079,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Bicep.Core": "1.0.0",
+          "Azure.Bicep.Types.Ev2": "1.0.2",
           "Bicep.LangServer": "1.0.0",
           "DiffPlex": "1.7.1",
           "FluentAssertions": "6.7.0",
@@ -2082,6 +2096,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Bicep.Core": "1.0.0",
+          "Azure.Bicep.Types.Ev2": "1.0.2",
           "CommandLineParser": "2.9.1",
           "OmniSharp.Extensions.LanguageServer": "0.19.5"
         }
@@ -2089,6 +2104,7 @@
       "bicep.langserver.integrationtests": {
         "type": "Project",
         "dependencies": {
+          "Azure.Bicep.Types.Ev2": "1.0.2",
           "Bicep.Core.Samples": "1.0.0",
           "Bicep.LangServer": "1.0.0",
           "FluentAssertions": "6.7.0",

@@ -44,6 +44,7 @@ namespace Bicep.LangServer.IntegrationTests
         private const string MinLengthTitle = "Add @minLength";
         private const string MaxLengthTitle = "Add @maxLength";
         private const string MinValueTitle = "Add @minValue";
+        private const string ScopeBindTitle = "Add @scopeBind";
         private const string MaxValueTitle = "Add @maxValue";
         private const string RemoveUnusedVariableTitle = "Remove unused variable";
         private const string RemoveUnusedParameterTitle = "Remove unused parameter";
@@ -395,6 +396,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2020-12-01' = {
         [DataRow("string", "@maxLength()", MaxLengthTitle)]
         [DataRow("array", "@maxLength()", MaxLengthTitle)]
         [DataRow("int", "@minValue()", MinValueTitle)]
+        [DataRow("string", "@scopeBind()", ScopeBindTitle)]
         [DataRow("int", "@maxValue()", MaxValueTitle)]
         [DataTestMethod]
         public async Task Parameter_decorator_actions_are_suggested(string type, string decorator, string title)
@@ -427,6 +429,7 @@ param foo {type}
         [DataRow("string", "@maxLength()", MaxLengthTitle)]
         [DataRow("object", "@maxLength()", MaxLengthTitle)]
         [DataRow("int", "@minValue()", MinValueTitle)]
+        [DataRow("string", "@scopeBind()", ScopeBindTitle)]
         [DataRow("int", "@maxValue()", MaxValueTitle)]
         [DataTestMethod]
         public async Task Parameter_duplicate_decorators_are_not_suggested(string type, string decorator, string title)
@@ -448,6 +451,10 @@ param foo {type}
         [DataRow("bool", MinValueTitle)]
         [DataRow("string", MinValueTitle)]
         [DataRow("array", MinValueTitle)]
+        [DataRow("object", ScopeBindTitle)]
+        [DataRow("bool", ScopeBindTitle)]
+        [DataRow("string", ScopeBindTitle)]
+        [DataRow("array", ScopeBindTitle)]
         [DataRow("object", MaxValueTitle)]
         [DataRow("bool", MaxValueTitle)]
         [DataRow("string", MaxValueTitle)]

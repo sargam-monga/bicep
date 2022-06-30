@@ -49,6 +49,7 @@ namespace Bicep.Core.Emit
             LanguageConstants.ParameterSecurePropertyName,
             LanguageConstants.ParameterAllowedPropertyName,
             LanguageConstants.ParameterMinValuePropertyName,
+            LanguageConstants.ParameterScopeBindPropertyName,
             LanguageConstants.ParameterMaxValuePropertyName,
             LanguageConstants.ParameterMinLengthPropertyName,
             LanguageConstants.ParameterMaxLengthPropertyName,

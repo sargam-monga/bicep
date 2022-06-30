@@ -28,6 +28,8 @@ namespace Bicep.Core.Semantics.Namespaces
                     return AzNamespaceType.Create(aliasName, resourceScope, azResourceTypeProvider);
                 case K8sNamespaceType.BuiltInName:
                     return K8sNamespaceType.Create(aliasName);
+                case Ev2NamespaceType.BuiltInName:
+                    return Ev2NamespaceType.Create(aliasName);
             }
 
             return null;

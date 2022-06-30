@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Bicep.Types.Ev2" Version="1.0.2" />
     <PackageReference Include="Azure.Containers.ContainerRegistry" Version="1.1.0-beta.4" />
     <PackageReference Include="Azure.Identity" Version="1.6.0" />
     <PackageReference Include="Azure.ResourceManager.Resources" Version="1.1.0" />

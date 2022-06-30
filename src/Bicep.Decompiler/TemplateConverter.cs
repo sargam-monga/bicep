@@ -758,7 +758,7 @@ namespace Bicep.Decompiler
 
             decoratorsAndNewLines.AddRange(
                 ProcessDecoratorsWithTransform(
-                new[] { "minValue", "maxValue", "minLength", "maxLength", "allowedValues" },
+                new[] { "scopeBind", "minValue", "maxValue", "minLength", "maxLength", "allowedValues" },
                 name => value.Value?[name],
                 input =>
                 {

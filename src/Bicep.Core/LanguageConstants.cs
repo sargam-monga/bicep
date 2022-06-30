@@ -90,6 +90,7 @@ namespace Bicep.Core
         public const string ParameterAllowedPropertyName = "allowed";
         public const string ParameterSecurePropertyName = "secure";
         public const string ParameterMinValuePropertyName = "minValue";
+        public const string ParameterScopeBindPropertyName = "scopeBind";
         public const string ParameterMaxValuePropertyName = "maxValue";
         public const string ParameterMinLengthPropertyName = "minLength";
         public const string ParameterMaxLengthPropertyName = "maxLength";

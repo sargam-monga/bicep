@@ -1,0 +1,150 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "languageVersion": "1.9-experimental",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "EXPERIMENTAL_WARNING": "Symbolic name support in ARM is experimental, and should be enabled for testing purposes only. Do not enable this setting for any production usage, or you may be unexpectedly broken at any time!",
+    "_generator": {
+      "name": "bicep",
+      "version": "0.7.131.26919",
+      "templateHash": "15693865189818056495"
+    }
+  },
+  "parameters": {
+    "ev2Config": {
+      "type": "secureString"
+    },
+    "skuName": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    }
+  },
+  "variables": {
+    "rolloutType": "Minor",
+    "env": "Int",
+    "displayName": "resource test 001",
+    "serviceGroup": "Microsoft.M365.PP.eersapibuildouttest",
+    "subscriptionKey": "123456"
+  },
+  "imports": {
+    "ev2": {
+      "provider": "ev2Extension",
+      "version": "1.0",
+      "config": {
+        "ev2Config": "[parameters('ev2Config')]",
+        "namespace": "default"
+      }
+    }
+  },
+  "resources": {
+    "storageTest": {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2021-09-01",
+      "name": "storage Test",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "[parameters('skuName')]"
+      },
+      "kind": "BlobStorage"
+    },
+    "shellExtension01": {
+      "import": "ev2",
+      "type": "ShellExtension/ev2Extension@v1",
+      "properties": {
+        "skipDeleteAfterExecution": true,
+        "maxExecutionTime": "P10H",
+        "package": "junk",
+        "useFallBackLocations": false,
+        "command": [
+          "sss"
+        ],
+        "metadata": {
+          "name": "name"
+        }
+      }
+    },
+    "httpExtension": {
+      "import": "ev2",
+      "type": "extension/ev2Extension@v1",
+      "properties": {
+        "type": "Microsoft.SkypeECS/__ecsExtension__",
+        "payloadProperties": {
+          "ecsAgents": {
+            "value": "Testsmbabuildout"
+          },
+          "ecsClient": {
+            "value": "CloudConfiguration"
+          },
+          "guestAgents": {
+            "value": {
+              "CloudConfiguration": [
+                "Global",
+                "ServiceGlobal"
+              ]
+            }
+          },
+          "populateCloudFilter": {
+            "value": "true"
+          },
+          "requestIdentifiers": {
+            "value": {
+              "GeographyName": "__GEOGRAPHY_NAME__",
+              "RegionName": "__REGION_NAME__",
+              "BuildVersion": "__BUILD_VERSION__",
+              "Region": "__REGION_NAME__"
+            }
+          },
+          "serviceTreeId": {
+            "value": "38fc030e-fdfb-4070-af15-b9ef203ac5cb"
+          }
+        },
+        "maxExecutionTime": "P1D",
+        "authenticationProperties": {},
+        "metadata": {
+          "name": "httpExtension"
+        },
+        "authenticationType": "SystemCertificateAuthentication"
+      }
+    },
+    "RegionAgnosticResource": {
+      "import": "ev2",
+      "type": "resource/ev2Extension@v1",
+      "properties": {
+        "orchestratedSteps": [
+          {
+            "resourceRef": "[reference('storageTest', '2021-09-01', 'full')]",
+            "actions": [
+              "deploy"
+            ],
+            "resourceGroupName": "TestName"
+          },
+          {
+            "resourceRef": "[reference('httpExtension')]",
+            "actions": [
+              "deploy"
+            ],
+            "dependsOn": [
+              "[reference('storageTest', '2021-09-01', 'full')]"
+            ],
+            "resourceGroupName": "TestName"
+          }
+        ],
+        "displayName": "[variables('displayName')]",
+        "subscriptionKey": "[variables('subscriptionKey')]",
+        "metadata": {
+          "name": "RegionAgnosticResource"
+        },
+        "rolloutType": "[variables('rolloutType')]",
+        "environment": "[variables('env')]",
+        "serviceIdentifier": "38fc030e-fdfb-4070-af15-b9ef203ac5cb",
+        "serviceGroup": "[variables('serviceGroup')]"
+      },
+      "dependsOn": [
+        "httpExtension",
+        "storageTest"
+      ]
+    }
+  }
+}

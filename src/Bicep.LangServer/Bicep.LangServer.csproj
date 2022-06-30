@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Bicep.Types.Ev2" Version="1.0.2" />
     <PackageReference Include="OmniSharp.Extensions.LanguageServer" Version="0.19.5" />
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
   </ItemGroup>

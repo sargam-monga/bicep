@@ -2,6 +2,15 @@
   "version": 1,
   "dependencies": {
     "net6.0": {
+      "Azure.Bicep.Types.Ev2": {
+        "type": "Direct",
+        "requested": "[1.0.2, )",
+        "resolved": "1.0.2",
+        "contentHash": "nut6dAMfGrkuY2bNR9qvy+zN0j9J+OrHWdP38dO2eOwNtqmwZWw9KM2SNohxuN7bFrHZdusYQyDHZmXcbzJ3ww==",
+        "dependencies": {
+          "Azure.Bicep.Types": "0.1.304"
+        }
+      },
       "FluentAssertions": {
         "type": "Direct",
         "requested": "[6.7.0, )",
@@ -2013,6 +2022,7 @@
         "dependencies": {
           "Azure.Bicep.Types": "0.2.2",
           "Azure.Bicep.Types.Az": "0.2.2",
+          "Azure.Bicep.Types.Ev2": "1.0.2",
           "Azure.Bicep.Types.K8s": "0.1.11",
           "Azure.Containers.ContainerRegistry": "1.1.0-beta.4",
           "Azure.Deployments.Core": "1.0.635",
@@ -2034,6 +2044,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Bicep.Core": "1.0.0",
+          "Azure.Bicep.Types.Ev2": "1.0.2",
           "DiffPlex": "1.7.1",
           "FluentAssertions": "6.7.0",
           "JsonPath.Net": "0.2.1",

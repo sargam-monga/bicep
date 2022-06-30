@@ -1055,6 +1055,14 @@ namespace Bicep.Core.Semantics.Namespaces
                 .WithEvaluator(MergeToTargetObject(LanguageConstants.ParameterMinValuePropertyName, SingleArgumentSelector))
                 .Build();
 
+            yield return new DecoratorBuilder(LanguageConstants.ParameterScopeBindPropertyName)
+                .WithDescription("Defines the scope binding of the parameter.")
+                .WithRequiredParameter("value", LanguageConstants.Any, "The scope bind value.")
+                .WithFlags(FunctionFlags.ParameterDecorator)
+                .WithAttachableType(LanguageConstants.String)
+                .WithEvaluator(MergeToTargetObject(LanguageConstants.ParameterScopeBindPropertyName, SingleArgumentSelector))
+                .Build();
+
             yield return new DecoratorBuilder(LanguageConstants.ParameterMaxValuePropertyName)
                 .WithDescription("Defines the maximum value of the parameter.")
                 .WithRequiredParameter("value", LanguageConstants.Int, "The maximum value.")
